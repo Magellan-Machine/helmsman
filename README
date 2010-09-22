@@ -1,0 +1,7 @@
+This is the Arduino software used to manage all onboard systems
+for the sailing robots produced by the "Magellan Machine" project.
+
+Dependencies: Arduino Messenger Library
+http://www.arduino.cc/playground/Code/Messenger
+
+Licence: GPLv3
