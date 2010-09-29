@@ -1,0 +1,166 @@
+# FREERUNNER and THE MAGELLAN MACHINE
+
+## WiFi
+
+On boot, the Freerunner should create, or try to connect to an Ad-Hoc network
+without encryption called "Magellan". It will take IP address 192.168.2.1.
+
+You should create an Ad-hoc network on your laptop with the same settings,
+and use a static IP address like 192.168.2.2.
+
+You should then be able to ssh to the freerunner (ssh root@192.168.2.1)
+
+The disadvantage of the Ad-hoc network is that you can not access the Internet
+from your laptop. There is a script on the Freerunner in /root/wifi/lewin.sh
+that I used to connect the Freerunner to my home network.
+
+## USB
+
+When plugging the USB cable in the FreeRunner, the FR will go on, and a new 
+network device should be visible from your hosting system. Use `dmesg | tail` 
+to find what's the new network interface, if you are unsure.
+
+Configure your new interface for static IP (192.168.0.200).
+
+You should now be able to log into the FR with `ssh root@192.168.0.200`. It
+might take a little while to prompt you for the password / log you in.
+
+## GPS
+
+GPS can be accessed over DBus. I tested it with cli-framework, a command line
+interface to the FSO (Freesmartphone) API over dbus.
+
+See the file 'gpsStuff2' for a dump of my session with the GPS. The position
+was about 20m off, but then it didn't see the entire sky, and had not been 
+on for very long.
+
+## Accellerometers
+
+See the acc.py ('python acc.py') program which reads the accellerometer 
+values and prints time, x, y, z, sum.
+
+## Configuration scripts
+
+There are two parameters that can be modified for USB: if the Freerunner is 
+a device (as when it is connected to a laptop with USB networking), or a host
+(as when it is connected to the Arduino). Also, if the Freerunner supplies 
+power on the USB connection or not.
+
+*Freerunner - Computer*
+Freerunner is device, not supplying power.
+
+*Freerunner - Arduino*
+Freerunner is host, supplies power to Arduino.
+
+*Freerunner - Arduino - External Power*
+Using a special USB cable with three plugs, the Freerunner and the Arduino 
+are powered from external power. Freerunner is host but does not supply power.
+
+I have made scripts USB-host, USB-device, powerExternal and powerFromFreerunner
+to change these settings.
+
+## Troubleshooting
+
+### Connectivity problems
+
+*The wireless network device on the FR is down*
+    ifdown eth0
+    ifup eth0
+sould do the trick
+
+*I get `eth0: ERROR while getting interface flags: No such device`*
+The problem might be in the `/etc/network/interfaces`: check out that
+the wireless subsistem is brought up at boot time (`/root/wifi/wifi-on.sh`) 
+and that the interface is brought up too automatically at boot-up 
+time (`auto eth0`).
+
+*I would like to add my own network to those automatically recognised*
+Edit the `/etc/wpa_supplicant/wpa_supplicant.conf`. You can find
+plenty of how-to's on how to do this on the internet. You could also use
+the `wpa_cli` command to have an interactive session. If you are using
+and hidden SSID, you have to set ap_scan to 2 (`ap_scan=2`).
+
+*I swear I did everything right... why it still doesn't work?*
+That's a mistery, but in some cases doing a powerdown and powerup (so, 
+NOT a reboot) makes things work.
+
+## Last known working configuration
+
+### /etc/wpa_supplicant/wpa_supplicant.conf
+
+    ctrl_interface=/var/run/wpa_supplicant
+    ctrl_interface_group=0
+    ap_scan=2
+    update_config=1
+
+    network={
+	    ssid="Magellan"
+	    key_mgmt=NONE
+	    priority=9
+	    mode=1
+	    disabled=1
+    }
+
+    network={
+	    ssid="lewin.nu"
+	    scan_ssid=1
+	    key_mgmt=NONE
+	    wep_key0=713343e0821a8d97cd3c65a93b
+	    priority=8
+	    disabled=1
+    }
+
+    network={
+	    ssid="sashimi"
+	    scan_ssid=1
+	    psk="fammientrare3"
+	    proto=RSN
+	    key_mgmt=WPA-PSK
+	    group=CCMP TKIP
+	    priority=12
+	    id_str="Mac WPA"
+      identity="ferdinando"
+    }
+
+
+### /etc/network/interfaces
+
+    # /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
+     
+    ## LOOPBACK INTERFACE
+    auto lo
+    iface lo inet loopback
+
+    ## AD-HOC WIRELESS INTERFACE
+    #auto eth0
+    #iface eth0 inet static
+    #     pre-up /root/wifi/wifi-on.sh
+    #     address 192.168.2.1
+    #     netmask 255.255.255.0
+    #     wireless-essid Magellan
+    #     wireless-mode ad-hoc
+    #     wireless-channel 1
+    #     wireless-txpower auto
+
+    ## REGULAR WLAN INTERFACE
+    auto eth0
+    iface eth0 inet dhcp
+          pre-up /root/wifi/wifi-on.sh
+          wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+    ## WIRED LAN-OVER-USB INTERFACE
+    # Ethernet/RNDIS gadget (g_ether)
+    # or on host side, usbnet and random hwaddr
+    auto usb0
+    iface usb0 inet static
+	    address 192.168.0.202
+	    netmask 255.255.255.0
+	    network 192.168.0.0
+	    up route add default gw 192.168.0.200 metric 8
+	    up echo nameserver 208.67.222.222 > /etc/resolv.conf
+	    up echo nameserver 208.67.220.220 >> /etc/resolv.conf
+	    down route del default gw 192.168.0.200 metric 8
+
+    ## BLUETOOTH NETWORK INTERFACE
+    iface bnep0 inet dhcp
+

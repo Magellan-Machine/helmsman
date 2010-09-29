@@ -1,3 +1,6 @@
+#ifndef CIRCUMSAIL_CONSTANTS_H
+#define CIRCUMSAIL_CONSTANTS_H
+
 ///////////////////////////////////////////
 //       PROGRAM-WIDE CONSTANTS          //
 ///////////////////////////////////////////
@@ -41,4 +44,4 @@ const int PIN_M3D_RESET           = 13;  // magnetometer pin 6
  *       The Wire i2c library uses these by default.
  */
  
-
+#endif

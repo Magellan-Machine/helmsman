@@ -1,24 +1,21 @@
 #include "WProgram.h" // Arduino standard definitions
+
 #include "globalConstants.h"
+#include "globalVariables.h"
 
-/*
- * globals
- */
-int m3d_X;
-int m3d_Y;
-int m3d_Z;
-unsigned long m3d_timestamp;
+//static enum { STATE_START_X };
 
-/**
-*/
-static enum { STATE_START_X };
-
-/*
- * static function prototypes
- */
+// static function prototypes
 static int receiveBit();
 static void sendBit(int bit);
 static float readAxis(int axis);
+static int Rad2Deg(double angle);
+
+// globals
+int north;
+int m3d_X;            // TODO: remove x, y, z when tested
+int m3d_Y;
+int m3d_Z;
 
 void m3d_setup()
 {
@@ -32,19 +29,16 @@ void m3d_setup()
   digitalWrite( PIN_M3D_SSNOT, LOW);
 }
 
+
 void m3d_do()
 {
   int x, y, z;
   
-  x = readAxis( 0 );
-  y = readAxis( 1 );
-  z = readAxis( 2 );
+  m3d_X = x = readAxis(0);
+  m3d_Y = y = readAxis(1);
+  m3d_Z = z = readAxis(2);
   
-  m3d_X = x;
-  m3d_Y = y;
-  m3d_Z = z;
-  
-  m3d_timestamp = micros();
+  north = (Rad2Deg(atan2(x, y)) + 270) % 360;     // 270 compensate for orientation of sensor (90°) and -180°<angle<0°
 }
 
 static float readAxis(int axis)
@@ -64,8 +58,8 @@ static float readAxis(int axis)
   sendBit(HIGH);  // PS2
   sendBit(HIGH);  // PS1
   sendBit(HIGH);  // PS0
-  sendBit(LOW);  // ODIR
-  sendBit(LOW);  // MOT
+  sendBit(LOW);   // ODIR
+  sendBit(LOW);   // MOT
  
   // the last two bits select the axis 
   if (axis == 0){ // x axis 
@@ -94,13 +88,13 @@ static float readAxis(int axis)
   int i;
   
   // the remaining bits are converted to an integer 
-  for( i = 14; i >= 0; i = i - 1){ 
+  for ( i = 14; i >= 0; i = i - 1) {
     long thisbit = receiveBit(); 
     thisbit = thisbit << i; 
     total = total | thisbit; 
   } 
  
-  if(sign == 1) { 
+  if (sign == 1) { 
     total = total - 32768; 
   } 
   
@@ -129,4 +123,9 @@ static int receiveBit(){
   delayMicroseconds(1);
   
   return bit; 
-} 
+}
+
+int Rad2Deg (double angle) {
+  static double ratio = 180.0 / 3.141592653589793238;
+  return (int) (angle * ratio);
+}
