@@ -6,11 +6,10 @@
 #include "logging.h"
 #include "servos.h"
 
-Messenger message = Messenger();
+// Module variables
+static Messenger message = Messenger();
 
-/*
- * Global variable
- */
+// Global variable
 int pilot_mode                 = OFF;
 int desired_heading            = 0;
 
@@ -31,6 +30,7 @@ void message_completed() {
     case SET_LOG_INTERVAL:
       logging_set_interval(arguments[0]);
       logging_do(true);
+      Serial.println("Logging interval adjusted");
       break;
     case SET_PILOT_MODE:
       pilot_mode = arguments[0];
@@ -53,7 +53,7 @@ void message_completed() {
     default:
       Serial.println("Unknown command!");      
   }
-  logging_do(true);  //Force sending a Log packet
+  logging_do(true);  //Force sending a Log packet only if logging is not happening already
 }
 
 void listener_setup() {

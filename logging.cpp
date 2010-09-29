@@ -41,10 +41,12 @@ void logging_do(byte single_pulse=false) {
     // The abs() is due to the fact the millis() reset itself to zero after ~50 days.
     return;
   }
-  Serial.print("!R:");                      // Leading exclamation mark for logging information!
-  Serial.print( constrain(map(servos_rudder_getPosition(), MIN_SERVO_RUDDER, MAX_SERVO_RUDDER, -100, +100), -100, 100) );
+  Serial.print("!T:");                      // Leading exclamation mark for logging information!
+  Serial.print(millis());
+  Serial.print(" R:");
+  Serial.print(constrain(map(servos_rudder_getPosition(), MIN_SERVO_RUDDER, MAX_SERVO_RUDDER, -100, +100), -100, 100));
   Serial.print(" S:");
-  Serial.print( constrain(map(servos_sail_getPosition(), MIN_SERVO_SAIL, MAX_SERVO_SAIL, 0, +100), 0, 100) );
+  Serial.print(constrain(map(servos_sail_getPosition(), MIN_SERVO_SAIL, MAX_SERVO_SAIL, 0, +100), 0, 100));
   Serial.print(" P:");
   Serial.print(pilot_mode);
   Serial.print(" H:");
@@ -55,7 +57,7 @@ void logging_do(byte single_pulse=false) {
   Serial.print(m3d_Y);
   Serial.print(" z:");
   Serial.print(m3d_Z);
-  Serial.print(" N:");
+  Serial.print(" n:");
   Serial.print(north);
   Serial.println();                         // Return Carriage for closing the message!
   millis_last_log = millis();

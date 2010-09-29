@@ -31,6 +31,7 @@ void setup() {
   rc_setup();
   m3d_setup();
   windMagneto_setup();
+  listener_setup();
   logging_setup();
 }
 

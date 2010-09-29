@@ -105,7 +105,7 @@ NOT a reboot) makes things work.
 	    ssid="lewin.nu"
 	    scan_ssid=1
 	    key_mgmt=NONE
-	    wep_key0=713343e0821a8d97cd3c65a93b
+	    wep_key0=<<<<<->>>>>>
 	    priority=8
 	    disabled=1
     }
@@ -113,7 +113,7 @@ NOT a reboot) makes things work.
     network={
 	    ssid="sashimi"
 	    scan_ssid=1
-	    psk="fammientrare3"
+	    psk="<<<<<->>>>>>"
 	    proto=RSN
 	    key_mgmt=WPA-PSK
 	    group=CCMP TKIP
