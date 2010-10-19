@@ -28,12 +28,12 @@ const int PIN_SERVO_RUDDER        =  3;  // Analog write is possible only on pin
 const int PIN_SERVO_SAIL          =  5;  // Analog write is possible only on pins: 3, 5, 6, 9, 10, and 11
 const int PIN_REMOTE_RUDDER       =  6;
 const int PIN_REMOTE_SAIL         =  7;
-const int PIN_M3D_SCLK            =  8;  // magnetometer pin 1 
-const int PIN_M3D_MISO            =  9;  // magnetometer pin 2 
-const int PIN_M3D_MOSI            = 10;  // magnetometer pin 3 
-const int PIN_M3D_SSNOT           = 11;  // magnetometer pin 4 
-const int PIN_M3D_DRDY            = 12;  // magnetometer pin 5 
-const int PIN_M3D_RESET           = 13;  // magnetometer pin 6 
+const int PIN_M3D_RESET           = 8;  // magnetometer pin 6
+const int PIN_M3D_DRDY            = 9;  // magnetometer pin 5
+const int PIN_M3D_SSNOT           = 10;  // magnetometer pin 4
+const int PIN_M3D_MOSI            = 11;  // magnetometer pin 3
+const int PIN_M3D_MISO            = 12;  // magnetometer pin 2
+const int PIN_M3D_SCLK            = 13;  // magnetometer pin 1
 
 /*
  * NOTE: Wind Magnetometer is connected to analog pins 4 & 5:

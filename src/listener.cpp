@@ -20,6 +20,7 @@ int desired_heading            = 0;
 // Messages are passed around as strings, hence the need for specific methods to decode
 // strings to integers, etc...
 void message_completed() {
+  Serial.println( "message_completed" );
   char command = message.readChar();
   int arguments[] = {
     0, 0, 0  };

@@ -34,6 +34,14 @@ void logging_do(byte single_pulse=false) {
   Serial.print(pilot_mode);
   Serial.print(" H:");
   Serial.print(desired_heading);
+  Serial.print(" C:"); // 3D compass vector
+  Serial.print( m3d_X );
+  Serial.print( "," );
+  Serial.print( m3d_Y );
+  Serial.print( "," );
+  Serial.print( m3d_Z );
+  Serial.print( " W:"); // Relative wind direction
+  Serial.print( windDirection );
   Serial.println();                         // Return Carriage for closing the message!
   millis_last_log = millis();
 }
