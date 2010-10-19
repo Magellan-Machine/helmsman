@@ -27,11 +27,11 @@
 void setup() {
   // Initiate Serial Communication
   Serial.begin(115200);
-
   servos_setup();
   rc_setup();
   m3d_setup();
   windMagneto_setup();
+  listener_setup();
   logging_setup();
 }
 

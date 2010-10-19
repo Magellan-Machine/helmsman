@@ -1,7 +1,7 @@
 #include "WProgram.h" // Arduino standard definitions
+
 #include "globalConstants.h"
 #include "globalVariables.h"
-
 #include "servos.h"
 
 void rc_setup() {
