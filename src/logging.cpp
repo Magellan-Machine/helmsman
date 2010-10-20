@@ -43,6 +43,7 @@ void logging_do(byte single_pulse=false) {
   }
   Serial.print("!T:");                      // Leading exclamation mark for logging information!
   Serial.print(millis());
+
   Serial.print(" R:");
   Serial.print(constrain(map(servos_rudder_getPosition(), MIN_SERVO_RUDDER, MAX_SERVO_RUDDER, -100, +100), -100, 100));
   Serial.print(" S:");
@@ -53,6 +54,7 @@ void logging_do(byte single_pulse=false) {
   Serial.print(desired_heading);
   Serial.print( " W:"); // Relative wind direction
   Serial.print( windDirection );
+
   Serial.print(" x:");
   Serial.print(m3d_X);
   Serial.print(" y:");
