@@ -1,0 +1,3 @@
+[submodule "external/arduino"]
+	path = external/arduino
+	url = http://github.com/arduino/Arduino.git
