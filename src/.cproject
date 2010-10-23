@@ -49,10 +49,9 @@
 <option id="de.innot.avreclipse.cppcompiler.option.debug.level.497816882" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 <option id="de.innot.avreclipse.cppcompiler.option.optimize.1463932057" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize"/>
 <option id="de.innot.avreclipse.cppcompiler.option.incpath.1321235563" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-<listOptionValue builtIn="false" value="/usr/share/arduino/hardware/arduino/cores/arduino/"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoCore}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Wire}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Servo}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoCore}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Messenger}&quot;"/>
 </option>
 <inputType id="de.innot.avreclipse.cppcompiler.input.904656395" superClass="de.innot.avreclipse.cppcompiler.input"/>
@@ -842,9 +841,9 @@
 <option id="de.innot.avreclipse.compiler.option.debug.level.1581457681" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 <option id="de.innot.avreclipse.compiler.option.optimize.1471896832" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 <option id="de.innot.avreclipse.compiler.option.incpath.830732377" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-<listOptionValue builtIn="false" value="/usr/share/arduino/hardware/arduino/cores/arduino/"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoCore}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Messenger}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/external/ArduinoCore}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/external/Servo}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/external/Messenger}/include&quot;"/>
 </option>
 <inputType id="de.innot.avreclipse.compiler.winavr.input.496158601" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
 </tool>
@@ -863,13 +862,13 @@
 <tool id="de.innot.avreclipse.tool.linker.winavr.app.release.1415442154" name="AVR C Linker" superClass="de.innot.avreclipse.tool.linker.winavr.app.release"/>
 <tool id="de.innot.avreclipse.tool.cpplinker.app.release.1471176865" name="AVR C++ Linker" superClass="de.innot.avreclipse.tool.cpplinker.app.release">
 <option id="de.innot.avreclipse.cpplinker.option.libs.1723123419" name="Libraries (-l)" superClass="de.innot.avreclipse.cpplinker.option.libs" valueType="libs">
-<listOptionValue builtIn="false" value="ArduinoCore"/>
+<listOptionValue builtIn="false" value="ArduinoCore2"/>
 <listOptionValue builtIn="false" value="Messenger"/>
 <listOptionValue builtIn="false" value="Wire"/>
 <listOptionValue builtIn="false" value="Servo"/>
 </option>
 <option id="de.innot.avreclipse.cpplinker.option.libpath.999780507" name="Libraries Path (-L)" superClass="de.innot.avreclipse.cpplinker.option.libpath" valueType="stringList">
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoCore/Release}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoCore2/Release}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Servo/Release}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Wire/Release}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Messenger/Release}&quot;"/>
