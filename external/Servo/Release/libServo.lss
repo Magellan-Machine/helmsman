@@ -1,0 +1,715 @@
+In archive libServo.a:
+
+Servo.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000005ae  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  000005e2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000026  00000000  00000000  000005e2  2**0
+                  ALLOC
+
+Disassembly of section .text:
+
+00000000 <_ZN5ServoC2Ev>:
+   0:	fc 01       	movw	r30, r24
+   2:	80 91 00 00 	lds	r24, 0x0000
+   6:	8c 30       	cpi	r24, 0x0C	; 12
+   8:	00 f4       	brcc	.+0      	; 0xa <_ZN5ServoC2Ev+0xa>
+   a:	80 83       	st	Z, r24
+   c:	8f 5f       	subi	r24, 0xFF	; 255
+   e:	80 93 00 00 	sts	0x0000, r24
+  12:	81 50       	subi	r24, 0x01	; 1
+  14:	90 e0       	ldi	r25, 0x00	; 0
+  16:	fc 01       	movw	r30, r24
+  18:	ee 0f       	add	r30, r30
+  1a:	ff 1f       	adc	r31, r31
+  1c:	e8 0f       	add	r30, r24
+  1e:	f9 1f       	adc	r31, r25
+  20:	e0 50       	subi	r30, 0x00	; 0
+  22:	f0 40       	sbci	r31, 0x00	; 0
+  24:	88 eb       	ldi	r24, 0xB8	; 184
+  26:	9b e0       	ldi	r25, 0x0B	; 11
+  28:	92 83       	std	Z+2, r25	; 0x02
+  2a:	81 83       	std	Z+1, r24	; 0x01
+  2c:	08 95       	ret
+  2e:	8f ef       	ldi	r24, 0xFF	; 255
+  30:	80 83       	st	Z, r24
+  32:	08 95       	ret
+
+00000034 <_ZN5ServoC1Ev>:
+  34:	fc 01       	movw	r30, r24
+  36:	80 91 00 00 	lds	r24, 0x0000
+  3a:	8c 30       	cpi	r24, 0x0C	; 12
+  3c:	00 f4       	brcc	.+0      	; 0x3e <_ZN5ServoC1Ev+0xa>
+  3e:	80 83       	st	Z, r24
+  40:	8f 5f       	subi	r24, 0xFF	; 255
+  42:	80 93 00 00 	sts	0x0000, r24
+  46:	81 50       	subi	r24, 0x01	; 1
+  48:	90 e0       	ldi	r25, 0x00	; 0
+  4a:	fc 01       	movw	r30, r24
+  4c:	ee 0f       	add	r30, r30
+  4e:	ff 1f       	adc	r31, r31
+  50:	e8 0f       	add	r30, r24
+  52:	f9 1f       	adc	r31, r25
+  54:	e0 50       	subi	r30, 0x00	; 0
+  56:	f0 40       	sbci	r31, 0x00	; 0
+  58:	88 eb       	ldi	r24, 0xB8	; 184
+  5a:	9b e0       	ldi	r25, 0x0B	; 11
+  5c:	92 83       	std	Z+2, r25	; 0x02
+  5e:	81 83       	std	Z+1, r24	; 0x01
+  60:	08 95       	ret
+  62:	8f ef       	ldi	r24, 0xFF	; 255
+  64:	80 83       	st	Z, r24
+  66:	08 95       	ret
+
+00000068 <_ZN5Servo6detachEv>:
+  68:	dc 01       	movw	r26, r24
+  6a:	8c 91       	ld	r24, X
+  6c:	90 e0       	ldi	r25, 0x00	; 0
+  6e:	fc 01       	movw	r30, r24
+  70:	ee 0f       	add	r30, r30
+  72:	ff 1f       	adc	r31, r31
+  74:	e8 0f       	add	r30, r24
+  76:	f9 1f       	adc	r31, r25
+  78:	e0 50       	subi	r30, 0x00	; 0
+  7a:	f0 40       	sbci	r31, 0x00	; 0
+  7c:	80 81       	ld	r24, Z
+  7e:	8f 7b       	andi	r24, 0xBF	; 191
+  80:	80 83       	st	Z, r24
+  82:	8c 91       	ld	r24, X
+  84:	6c e0       	ldi	r22, 0x0C	; 12
+  86:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+  8a:	9c e0       	ldi	r25, 0x0C	; 12
+  8c:	89 9f       	mul	r24, r25
+  8e:	a0 01       	movw	r20, r0
+  90:	11 24       	eor	r1, r1
+  92:	20 e0       	ldi	r18, 0x00	; 0
+  94:	30 e0       	ldi	r19, 0x00	; 0
+  96:	c9 01       	movw	r24, r18
+  98:	84 0f       	add	r24, r20
+  9a:	95 1f       	adc	r25, r21
+  9c:	fc 01       	movw	r30, r24
+  9e:	ee 0f       	add	r30, r30
+  a0:	ff 1f       	adc	r31, r31
+  a2:	e8 0f       	add	r30, r24
+  a4:	f9 1f       	adc	r31, r25
+  a6:	e0 50       	subi	r30, 0x00	; 0
+  a8:	f0 40       	sbci	r31, 0x00	; 0
+  aa:	80 81       	ld	r24, Z
+  ac:	86 fd       	sbrc	r24, 6
+  ae:	00 c0       	rjmp	.+0      	; 0xb0 <_ZN5Servo6detachEv+0x48>
+  b0:	2f 5f       	subi	r18, 0xFF	; 255
+  b2:	3f 4f       	sbci	r19, 0xFF	; 255
+  b4:	2c 30       	cpi	r18, 0x0C	; 12
+  b6:	31 05       	cpc	r19, r1
+  b8:	01 f4       	brne	.+0      	; 0xba <_ZN5Servo6detachEv+0x52>
+  ba:	08 95       	ret
+
+000000bc <_ZN5Servo17writeMicrosecondsEi>:
+  bc:	fc 01       	movw	r30, r24
+  be:	20 81       	ld	r18, Z
+  c0:	2c 30       	cpi	r18, 0x0C	; 12
+  c2:	00 f0       	brcs	.+0      	; 0xc4 <_ZN5Servo17writeMicrosecondsEi+0x8>
+  c4:	00 c0       	rjmp	.+0      	; 0xc6 <_ZN5Servo17writeMicrosecondsEi+0xa>
+  c6:	81 81       	ldd	r24, Z+1	; 0x01
+  c8:	99 27       	eor	r25, r25
+  ca:	87 fd       	sbrc	r24, 7
+  cc:	90 95       	com	r25
+  ce:	48 e8       	ldi	r20, 0x88	; 136
+  d0:	50 e0       	ldi	r21, 0x00	; 0
+  d2:	48 1b       	sub	r20, r24
+  d4:	59 0b       	sbc	r21, r25
+  d6:	44 0f       	add	r20, r20
+  d8:	55 1f       	adc	r21, r21
+  da:	44 0f       	add	r20, r20
+  dc:	55 1f       	adc	r21, r21
+  de:	64 17       	cp	r22, r20
+  e0:	75 07       	cpc	r23, r21
+  e2:	04 f0       	brlt	.+0      	; 0xe4 <_ZN5Servo17writeMicrosecondsEi+0x28>
+  e4:	82 81       	ldd	r24, Z+2	; 0x02
+  e6:	99 27       	eor	r25, r25
+  e8:	87 fd       	sbrc	r24, 7
+  ea:	90 95       	com	r25
+  ec:	48 e5       	ldi	r20, 0x58	; 88
+  ee:	52 e0       	ldi	r21, 0x02	; 2
+  f0:	48 1b       	sub	r20, r24
+  f2:	59 0b       	sbc	r21, r25
+  f4:	44 0f       	add	r20, r20
+  f6:	55 1f       	adc	r21, r21
+  f8:	44 0f       	add	r20, r20
+  fa:	55 1f       	adc	r21, r21
+  fc:	64 17       	cp	r22, r20
+  fe:	75 07       	cpc	r23, r21
+ 100:	04 f4       	brge	.+0      	; 0x102 <_ZN5Servo17writeMicrosecondsEi+0x46>
+ 102:	ab 01       	movw	r20, r22
+ 104:	42 50       	subi	r20, 0x02	; 2
+ 106:	50 40       	sbci	r21, 0x00	; 0
+ 108:	ca 01       	movw	r24, r20
+ 10a:	aa 27       	eor	r26, r26
+ 10c:	97 fd       	sbrc	r25, 7
+ 10e:	a0 95       	com	r26
+ 110:	ba 2f       	mov	r27, r26
+ 112:	44 e0       	ldi	r20, 0x04	; 4
+ 114:	88 0f       	add	r24, r24
+ 116:	99 1f       	adc	r25, r25
+ 118:	aa 1f       	adc	r26, r26
+ 11a:	bb 1f       	adc	r27, r27
+ 11c:	4a 95       	dec	r20
+ 11e:	01 f4       	brne	.+0      	; 0x120 <_ZN5Servo17writeMicrosecondsEi+0x64>
+ 120:	33 e0       	ldi	r19, 0x03	; 3
+ 122:	b6 95       	lsr	r27
+ 124:	a7 95       	ror	r26
+ 126:	97 95       	ror	r25
+ 128:	87 95       	ror	r24
+ 12a:	3a 95       	dec	r19
+ 12c:	01 f4       	brne	.+0      	; 0x12e <_ZN5Servo17writeMicrosecondsEi+0x72>
+ 12e:	4f b7       	in	r20, 0x3f	; 63
+ 130:	f8 94       	cli
+ 132:	30 e0       	ldi	r19, 0x00	; 0
+ 134:	f9 01       	movw	r30, r18
+ 136:	ee 0f       	add	r30, r30
+ 138:	ff 1f       	adc	r31, r31
+ 13a:	e2 0f       	add	r30, r18
+ 13c:	f3 1f       	adc	r31, r19
+ 13e:	e0 50       	subi	r30, 0x00	; 0
+ 140:	f0 40       	sbci	r31, 0x00	; 0
+ 142:	92 83       	std	Z+2, r25	; 0x02
+ 144:	81 83       	std	Z+1, r24	; 0x01
+ 146:	4f bf       	out	0x3f, r20	; 63
+ 148:	08 95       	ret
+
+0000014a <_ZN5Servo16readMicrosecondsEv>:
+ 14a:	fc 01       	movw	r30, r24
+ 14c:	80 81       	ld	r24, Z
+ 14e:	8f 3f       	cpi	r24, 0xFF	; 255
+ 150:	01 f4       	brne	.+0      	; 0x152 <_ZN5Servo16readMicrosecondsEv+0x8>
+ 152:	20 e0       	ldi	r18, 0x00	; 0
+ 154:	30 e0       	ldi	r19, 0x00	; 0
+ 156:	00 c0       	rjmp	.+0      	; 0x158 <_ZN5Servo16readMicrosecondsEv+0xe>
+ 158:	90 e0       	ldi	r25, 0x00	; 0
+ 15a:	fc 01       	movw	r30, r24
+ 15c:	ee 0f       	add	r30, r30
+ 15e:	ff 1f       	adc	r31, r31
+ 160:	e8 0f       	add	r30, r24
+ 162:	f9 1f       	adc	r31, r25
+ 164:	e0 50       	subi	r30, 0x00	; 0
+ 166:	f0 40       	sbci	r31, 0x00	; 0
+ 168:	21 81       	ldd	r18, Z+1	; 0x01
+ 16a:	32 81       	ldd	r19, Z+2	; 0x02
+ 16c:	83 e0       	ldi	r24, 0x03	; 3
+ 16e:	22 0f       	add	r18, r18
+ 170:	33 1f       	adc	r19, r19
+ 172:	8a 95       	dec	r24
+ 174:	01 f4       	brne	.+0      	; 0x176 <_ZN5Servo16readMicrosecondsEv+0x2c>
+ 176:	b4 e0       	ldi	r27, 0x04	; 4
+ 178:	36 95       	lsr	r19
+ 17a:	27 95       	ror	r18
+ 17c:	ba 95       	dec	r27
+ 17e:	01 f4       	brne	.+0      	; 0x180 <_ZN5Servo16readMicrosecondsEv+0x36>
+ 180:	2e 5f       	subi	r18, 0xFE	; 254
+ 182:	3f 4f       	sbci	r19, 0xFF	; 255
+ 184:	c9 01       	movw	r24, r18
+ 186:	08 95       	ret
+
+00000188 <_ZN5Servo8attachedEv>:
+ 188:	fc 01       	movw	r30, r24
+ 18a:	80 81       	ld	r24, Z
+ 18c:	90 e0       	ldi	r25, 0x00	; 0
+ 18e:	fc 01       	movw	r30, r24
+ 190:	ee 0f       	add	r30, r30
+ 192:	ff 1f       	adc	r31, r31
+ 194:	e8 0f       	add	r30, r24
+ 196:	f9 1f       	adc	r31, r25
+ 198:	e0 50       	subi	r30, 0x00	; 0
+ 19a:	f0 40       	sbci	r31, 0x00	; 0
+ 19c:	80 81       	ld	r24, Z
+ 19e:	82 95       	swap	r24
+ 1a0:	86 95       	lsr	r24
+ 1a2:	86 95       	lsr	r24
+ 1a4:	83 70       	andi	r24, 0x03	; 3
+ 1a6:	81 70       	andi	r24, 0x01	; 1
+ 1a8:	01 f0       	breq	.+0      	; 0x1aa <_ZN5Servo8attachedEv+0x22>
+ 1aa:	81 e0       	ldi	r24, 0x01	; 1
+ 1ac:	08 95       	ret
+
+000001ae <_ZN5Servo4readEv>:
+ 1ae:	af 92       	push	r10
+ 1b0:	bf 92       	push	r11
+ 1b2:	cf 92       	push	r12
+ 1b4:	df 92       	push	r13
+ 1b6:	ef 92       	push	r14
+ 1b8:	ff 92       	push	r15
+ 1ba:	0f 93       	push	r16
+ 1bc:	1f 93       	push	r17
+ 1be:	8c 01       	movw	r16, r24
+ 1c0:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 1c4:	00 d0       	rcall	.+0      	; 0x1c6 <_ZN5Servo4readEv+0x18>
+ 1c6:	00 d0       	rcall	.+0      	; 0x1c8 <_ZN5Servo4readEv+0x1a>
+ 1c8:	01 96       	adiw	r24, 0x01	; 1
+ 1ca:	aa 27       	eor	r26, r26
+ 1cc:	97 fd       	sbrc	r25, 7
+ 1ce:	a0 95       	com	r26
+ 1d0:	ba 2f       	mov	r27, r26
+ 1d2:	f8 01       	movw	r30, r16
+ 1d4:	61 81       	ldd	r22, Z+1	; 0x01
+ 1d6:	77 27       	eor	r23, r23
+ 1d8:	67 fd       	sbrc	r22, 7
+ 1da:	70 95       	com	r23
+ 1dc:	28 e8       	ldi	r18, 0x88	; 136
+ 1de:	30 e0       	ldi	r19, 0x00	; 0
+ 1e0:	26 1b       	sub	r18, r22
+ 1e2:	37 0b       	sbc	r19, r23
+ 1e4:	22 0f       	add	r18, r18
+ 1e6:	33 1f       	adc	r19, r19
+ 1e8:	22 0f       	add	r18, r18
+ 1ea:	33 1f       	adc	r19, r19
+ 1ec:	44 27       	eor	r20, r20
+ 1ee:	37 fd       	sbrc	r19, 7
+ 1f0:	40 95       	com	r20
+ 1f2:	54 2f       	mov	r21, r20
+ 1f4:	62 81       	ldd	r22, Z+2	; 0x02
+ 1f6:	77 27       	eor	r23, r23
+ 1f8:	67 fd       	sbrc	r22, 7
+ 1fa:	70 95       	com	r23
+ 1fc:	e8 e5       	ldi	r30, 0x58	; 88
+ 1fe:	ee 2e       	mov	r14, r30
+ 200:	e2 e0       	ldi	r30, 0x02	; 2
+ 202:	fe 2e       	mov	r15, r30
+ 204:	e6 1a       	sub	r14, r22
+ 206:	f7 0a       	sbc	r15, r23
+ 208:	ee 0c       	add	r14, r14
+ 20a:	ff 1c       	adc	r15, r15
+ 20c:	ee 0c       	add	r14, r14
+ 20e:	ff 1c       	adc	r15, r15
+ 210:	00 27       	eor	r16, r16
+ 212:	f7 fc       	sbrc	r15, 7
+ 214:	00 95       	com	r16
+ 216:	10 2f       	mov	r17, r16
+ 218:	64 eb       	ldi	r22, 0xB4	; 180
+ 21a:	a6 2e       	mov	r10, r22
+ 21c:	b1 2c       	mov	r11, r1
+ 21e:	c1 2c       	mov	r12, r1
+ 220:	d1 2c       	mov	r13, r1
+ 222:	ed b7       	in	r30, 0x3d	; 61
+ 224:	fe b7       	in	r31, 0x3e	; 62
+ 226:	a1 82       	std	Z+1, r10	; 0x01
+ 228:	b2 82       	std	Z+2, r11	; 0x02
+ 22a:	c3 82       	std	Z+3, r12	; 0x03
+ 22c:	d4 82       	std	Z+4, r13	; 0x04
+ 22e:	bc 01       	movw	r22, r24
+ 230:	cd 01       	movw	r24, r26
+ 232:	aa 24       	eor	r10, r10
+ 234:	bb 24       	eor	r11, r11
+ 236:	65 01       	movw	r12, r10
+ 238:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 23c:	0f 90       	pop	r0
+ 23e:	0f 90       	pop	r0
+ 240:	0f 90       	pop	r0
+ 242:	0f 90       	pop	r0
+ 244:	cb 01       	movw	r24, r22
+ 246:	1f 91       	pop	r17
+ 248:	0f 91       	pop	r16
+ 24a:	ff 90       	pop	r15
+ 24c:	ef 90       	pop	r14
+ 24e:	df 90       	pop	r13
+ 250:	cf 90       	pop	r12
+ 252:	bf 90       	pop	r11
+ 254:	af 90       	pop	r10
+ 256:	08 95       	ret
+
+00000258 <_ZN5Servo5writeEi>:
+ 258:	af 92       	push	r10
+ 25a:	bf 92       	push	r11
+ 25c:	cf 92       	push	r12
+ 25e:	df 92       	push	r13
+ 260:	ef 92       	push	r14
+ 262:	ff 92       	push	r15
+ 264:	0f 93       	push	r16
+ 266:	1f 93       	push	r17
+ 268:	cf 93       	push	r28
+ 26a:	df 93       	push	r29
+ 26c:	ec 01       	movw	r28, r24
+ 26e:	9b 01       	movw	r18, r22
+ 270:	82 e0       	ldi	r24, 0x02	; 2
+ 272:	60 32       	cpi	r22, 0x20	; 32
+ 274:	78 07       	cpc	r23, r24
+ 276:	04 f0       	brlt	.+0      	; 0x278 <_ZN5Servo5writeEi+0x20>
+ 278:	00 c0       	rjmp	.+0      	; 0x27a <_ZN5Servo5writeEi+0x22>
+ 27a:	77 ff       	sbrs	r23, 7
+ 27c:	00 c0       	rjmp	.+0      	; 0x27e <_ZN5Servo5writeEi+0x26>
+ 27e:	20 e0       	ldi	r18, 0x00	; 0
+ 280:	30 e0       	ldi	r19, 0x00	; 0
+ 282:	00 c0       	rjmp	.+0      	; 0x284 <_ZN5Servo5writeEi+0x2c>
+ 284:	65 3b       	cpi	r22, 0xB5	; 181
+ 286:	71 05       	cpc	r23, r1
+ 288:	04 f0       	brlt	.+0      	; 0x28a <_ZN5Servo5writeEi+0x32>
+ 28a:	24 eb       	ldi	r18, 0xB4	; 180
+ 28c:	30 e0       	ldi	r19, 0x00	; 0
+ 28e:	00 d0       	rcall	.+0      	; 0x290 <_ZN5Servo5writeEi+0x38>
+ 290:	00 d0       	rcall	.+0      	; 0x292 <_ZN5Servo5writeEi+0x3a>
+ 292:	b9 01       	movw	r22, r18
+ 294:	88 27       	eor	r24, r24
+ 296:	77 fd       	sbrc	r23, 7
+ 298:	80 95       	com	r24
+ 29a:	98 2f       	mov	r25, r24
+ 29c:	29 81       	ldd	r18, Y+1	; 0x01
+ 29e:	33 27       	eor	r19, r19
+ 2a0:	27 fd       	sbrc	r18, 7
+ 2a2:	30 95       	com	r19
+ 2a4:	b8 e8       	ldi	r27, 0x88	; 136
+ 2a6:	ab 2e       	mov	r10, r27
+ 2a8:	b1 2c       	mov	r11, r1
+ 2aa:	a2 1a       	sub	r10, r18
+ 2ac:	b3 0a       	sbc	r11, r19
+ 2ae:	aa 0c       	add	r10, r10
+ 2b0:	bb 1c       	adc	r11, r11
+ 2b2:	aa 0c       	add	r10, r10
+ 2b4:	bb 1c       	adc	r11, r11
+ 2b6:	cc 24       	eor	r12, r12
+ 2b8:	b7 fc       	sbrc	r11, 7
+ 2ba:	c0 94       	com	r12
+ 2bc:	dc 2c       	mov	r13, r12
+ 2be:	ea 81       	ldd	r30, Y+2	; 0x02
+ 2c0:	ff 27       	eor	r31, r31
+ 2c2:	e7 fd       	sbrc	r30, 7
+ 2c4:	f0 95       	com	r31
+ 2c6:	28 e5       	ldi	r18, 0x58	; 88
+ 2c8:	32 e0       	ldi	r19, 0x02	; 2
+ 2ca:	2e 1b       	sub	r18, r30
+ 2cc:	3f 0b       	sbc	r19, r31
+ 2ce:	22 0f       	add	r18, r18
+ 2d0:	33 1f       	adc	r19, r19
+ 2d2:	22 0f       	add	r18, r18
+ 2d4:	33 1f       	adc	r19, r19
+ 2d6:	44 27       	eor	r20, r20
+ 2d8:	37 fd       	sbrc	r19, 7
+ 2da:	40 95       	com	r20
+ 2dc:	54 2f       	mov	r21, r20
+ 2de:	ed b7       	in	r30, 0x3d	; 61
+ 2e0:	fe b7       	in	r31, 0x3e	; 62
+ 2e2:	21 83       	std	Z+1, r18	; 0x01
+ 2e4:	32 83       	std	Z+2, r19	; 0x02
+ 2e6:	43 83       	std	Z+3, r20	; 0x03
+ 2e8:	54 83       	std	Z+4, r21	; 0x04
+ 2ea:	20 e0       	ldi	r18, 0x00	; 0
+ 2ec:	30 e0       	ldi	r19, 0x00	; 0
+ 2ee:	40 e0       	ldi	r20, 0x00	; 0
+ 2f0:	50 e0       	ldi	r21, 0x00	; 0
+ 2f2:	e4 eb       	ldi	r30, 0xB4	; 180
+ 2f4:	ee 2e       	mov	r14, r30
+ 2f6:	f1 2c       	mov	r15, r1
+ 2f8:	01 2d       	mov	r16, r1
+ 2fa:	11 2d       	mov	r17, r1
+ 2fc:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 300:	9b 01       	movw	r18, r22
+ 302:	0f 90       	pop	r0
+ 304:	0f 90       	pop	r0
+ 306:	0f 90       	pop	r0
+ 308:	0f 90       	pop	r0
+ 30a:	ce 01       	movw	r24, r28
+ 30c:	b9 01       	movw	r22, r18
+ 30e:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 312:	df 91       	pop	r29
+ 314:	cf 91       	pop	r28
+ 316:	1f 91       	pop	r17
+ 318:	0f 91       	pop	r16
+ 31a:	ff 90       	pop	r15
+ 31c:	ef 90       	pop	r14
+ 31e:	df 90       	pop	r13
+ 320:	cf 90       	pop	r12
+ 322:	bf 90       	pop	r11
+ 324:	af 90       	pop	r10
+ 326:	08 95       	ret
+
+00000328 <_ZN5Servo6attachEiii>:
+ 328:	cf 92       	push	r12
+ 32a:	df 92       	push	r13
+ 32c:	ef 92       	push	r14
+ 32e:	ff 92       	push	r15
+ 330:	1f 93       	push	r17
+ 332:	cf 93       	push	r28
+ 334:	df 93       	push	r29
+ 336:	ec 01       	movw	r28, r24
+ 338:	16 2f       	mov	r17, r22
+ 33a:	7a 01       	movw	r14, r20
+ 33c:	69 01       	movw	r12, r18
+ 33e:	88 81       	ld	r24, Y
+ 340:	8c 30       	cpi	r24, 0x0C	; 12
+ 342:	00 f0       	brcs	.+0      	; 0x344 <_ZN5Servo6attachEiii+0x1c>
+ 344:	00 c0       	rjmp	.+0      	; 0x346 <_ZN5Servo6attachEiii+0x1e>
+ 346:	86 2f       	mov	r24, r22
+ 348:	61 e0       	ldi	r22, 0x01	; 1
+ 34a:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 34e:	88 81       	ld	r24, Y
+ 350:	90 e0       	ldi	r25, 0x00	; 0
+ 352:	fc 01       	movw	r30, r24
+ 354:	ee 0f       	add	r30, r30
+ 356:	ff 1f       	adc	r31, r31
+ 358:	e8 0f       	add	r30, r24
+ 35a:	f9 1f       	adc	r31, r25
+ 35c:	e0 50       	subi	r30, 0x00	; 0
+ 35e:	f0 40       	sbci	r31, 0x00	; 0
+ 360:	1f 73       	andi	r17, 0x3F	; 63
+ 362:	80 81       	ld	r24, Z
+ 364:	80 7c       	andi	r24, 0xC0	; 192
+ 366:	81 2b       	or	r24, r17
+ 368:	80 83       	st	Z, r24
+ 36a:	80 e2       	ldi	r24, 0x20	; 32
+ 36c:	92 e0       	ldi	r25, 0x02	; 2
+ 36e:	8e 19       	sub	r24, r14
+ 370:	9f 09       	sbc	r25, r15
+ 372:	64 e0       	ldi	r22, 0x04	; 4
+ 374:	70 e0       	ldi	r23, 0x00	; 0
+ 376:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 37a:	69 83       	std	Y+1, r22	; 0x01
+ 37c:	80 e6       	ldi	r24, 0x60	; 96
+ 37e:	99 e0       	ldi	r25, 0x09	; 9
+ 380:	8c 19       	sub	r24, r12
+ 382:	9d 09       	sbc	r25, r13
+ 384:	64 e0       	ldi	r22, 0x04	; 4
+ 386:	70 e0       	ldi	r23, 0x00	; 0
+ 388:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 38c:	6a 83       	std	Y+2, r22	; 0x02
+ 38e:	a8 81       	ld	r26, Y
+ 390:	8a 2f       	mov	r24, r26
+ 392:	6c e0       	ldi	r22, 0x0C	; 12
+ 394:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 398:	68 2f       	mov	r22, r24
+ 39a:	90 e0       	ldi	r25, 0x00	; 0
+ 39c:	ac 01       	movw	r20, r24
+ 39e:	44 0f       	add	r20, r20
+ 3a0:	55 1f       	adc	r21, r21
+ 3a2:	48 0f       	add	r20, r24
+ 3a4:	59 1f       	adc	r21, r25
+ 3a6:	44 0f       	add	r20, r20
+ 3a8:	55 1f       	adc	r21, r21
+ 3aa:	44 0f       	add	r20, r20
+ 3ac:	55 1f       	adc	r21, r21
+ 3ae:	20 e0       	ldi	r18, 0x00	; 0
+ 3b0:	30 e0       	ldi	r19, 0x00	; 0
+ 3b2:	c9 01       	movw	r24, r18
+ 3b4:	84 0f       	add	r24, r20
+ 3b6:	95 1f       	adc	r25, r21
+ 3b8:	fc 01       	movw	r30, r24
+ 3ba:	ee 0f       	add	r30, r30
+ 3bc:	ff 1f       	adc	r31, r31
+ 3be:	e8 0f       	add	r30, r24
+ 3c0:	f9 1f       	adc	r31, r25
+ 3c2:	e0 50       	subi	r30, 0x00	; 0
+ 3c4:	f0 40       	sbci	r31, 0x00	; 0
+ 3c6:	80 81       	ld	r24, Z
+ 3c8:	86 fd       	sbrc	r24, 6
+ 3ca:	00 c0       	rjmp	.+0      	; 0x3cc <_ZN5Servo6attachEiii+0xa4>
+ 3cc:	2f 5f       	subi	r18, 0xFF	; 255
+ 3ce:	3f 4f       	sbci	r19, 0xFF	; 255
+ 3d0:	2c 30       	cpi	r18, 0x0C	; 12
+ 3d2:	31 05       	cpc	r19, r1
+ 3d4:	01 f4       	brne	.+0      	; 0x3d6 <_ZN5Servo6attachEiii+0xae>
+ 3d6:	00 c0       	rjmp	.+0      	; 0x3d8 <_ZN5Servo6attachEiii+0xb0>
+ 3d8:	10 92 80 00 	sts	0x0080, r1
+ 3dc:	82 e0       	ldi	r24, 0x02	; 2
+ 3de:	80 93 81 00 	sts	0x0081, r24
+ 3e2:	10 92 85 00 	sts	0x0085, r1
+ 3e6:	10 92 84 00 	sts	0x0084, r1
+ 3ea:	b1 9a       	sbi	0x16, 1	; 22
+ 3ec:	80 91 6f 00 	lds	r24, 0x006F
+ 3f0:	82 60       	ori	r24, 0x02	; 2
+ 3f2:	80 93 6f 00 	sts	0x006F, r24
+ 3f6:	8a 2f       	mov	r24, r26
+ 3f8:	90 e0       	ldi	r25, 0x00	; 0
+ 3fa:	fc 01       	movw	r30, r24
+ 3fc:	ee 0f       	add	r30, r30
+ 3fe:	ff 1f       	adc	r31, r31
+ 400:	e8 0f       	add	r30, r24
+ 402:	f9 1f       	adc	r31, r25
+ 404:	e0 50       	subi	r30, 0x00	; 0
+ 406:	f0 40       	sbci	r31, 0x00	; 0
+ 408:	80 81       	ld	r24, Z
+ 40a:	80 64       	ori	r24, 0x40	; 64
+ 40c:	80 83       	st	Z, r24
+ 40e:	88 81       	ld	r24, Y
+ 410:	df 91       	pop	r29
+ 412:	cf 91       	pop	r28
+ 414:	1f 91       	pop	r17
+ 416:	ff 90       	pop	r15
+ 418:	ef 90       	pop	r14
+ 41a:	df 90       	pop	r13
+ 41c:	cf 90       	pop	r12
+ 41e:	08 95       	ret
+ 420:	66 23       	and	r22, r22
+ 422:	01 f0       	breq	.+0      	; 0x424 <_ZN5Servo6attachEiii+0xfc>
+ 424:	00 c0       	rjmp	.+0      	; 0x426 <_ZN5Servo6attachEi>
+
+00000426 <_ZN5Servo6attachEi>:
+ 426:	40 e2       	ldi	r20, 0x20	; 32
+ 428:	52 e0       	ldi	r21, 0x02	; 2
+ 42a:	20 e6       	ldi	r18, 0x60	; 96
+ 42c:	39 e0       	ldi	r19, 0x09	; 9
+ 42e:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 432:	08 95       	ret
+
+00000434 <__vector_11>:
+ 434:	1f 92       	push	r1
+ 436:	0f 92       	push	r0
+ 438:	0f b6       	in	r0, 0x3f	; 63
+ 43a:	0f 92       	push	r0
+ 43c:	11 24       	eor	r1, r1
+ 43e:	2f 93       	push	r18
+ 440:	3f 93       	push	r19
+ 442:	4f 93       	push	r20
+ 444:	5f 93       	push	r21
+ 446:	6f 93       	push	r22
+ 448:	7f 93       	push	r23
+ 44a:	8f 93       	push	r24
+ 44c:	9f 93       	push	r25
+ 44e:	af 93       	push	r26
+ 450:	bf 93       	push	r27
+ 452:	ef 93       	push	r30
+ 454:	ff 93       	push	r31
+ 456:	80 91 00 00 	lds	r24, 0x0000
+ 45a:	87 ff       	sbrs	r24, 7
+ 45c:	00 c0       	rjmp	.+0      	; 0x45e <__vector_11+0x2a>
+ 45e:	10 92 85 00 	sts	0x0085, r1
+ 462:	10 92 84 00 	sts	0x0084, r1
+ 466:	00 c0       	rjmp	.+0      	; 0x468 <__vector_11+0x34>
+ 468:	20 91 00 00 	lds	r18, 0x0000
+ 46c:	33 27       	eor	r19, r19
+ 46e:	27 fd       	sbrc	r18, 7
+ 470:	30 95       	com	r19
+ 472:	80 91 00 00 	lds	r24, 0x0000
+ 476:	90 e0       	ldi	r25, 0x00	; 0
+ 478:	28 17       	cp	r18, r24
+ 47a:	39 07       	cpc	r19, r25
+ 47c:	04 f4       	brge	.+0      	; 0x47e <__vector_11+0x4a>
+ 47e:	80 91 00 00 	lds	r24, 0x0000
+ 482:	99 27       	eor	r25, r25
+ 484:	87 fd       	sbrc	r24, 7
+ 486:	90 95       	com	r25
+ 488:	fc 01       	movw	r30, r24
+ 48a:	ee 0f       	add	r30, r30
+ 48c:	ff 1f       	adc	r31, r31
+ 48e:	e8 0f       	add	r30, r24
+ 490:	f9 1f       	adc	r31, r25
+ 492:	e0 50       	subi	r30, 0x00	; 0
+ 494:	f0 40       	sbci	r31, 0x00	; 0
+ 496:	80 81       	ld	r24, Z
+ 498:	86 ff       	sbrs	r24, 6
+ 49a:	00 c0       	rjmp	.+0      	; 0x49c <__vector_11+0x68>
+ 49c:	80 91 00 00 	lds	r24, 0x0000
+ 4a0:	99 27       	eor	r25, r25
+ 4a2:	87 fd       	sbrc	r24, 7
+ 4a4:	90 95       	com	r25
+ 4a6:	fc 01       	movw	r30, r24
+ 4a8:	ee 0f       	add	r30, r30
+ 4aa:	ff 1f       	adc	r31, r31
+ 4ac:	e8 0f       	add	r30, r24
+ 4ae:	f9 1f       	adc	r31, r25
+ 4b0:	e0 50       	subi	r30, 0x00	; 0
+ 4b2:	f0 40       	sbci	r31, 0x00	; 0
+ 4b4:	80 81       	ld	r24, Z
+ 4b6:	8f 73       	andi	r24, 0x3F	; 63
+ 4b8:	60 e0       	ldi	r22, 0x00	; 0
+ 4ba:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 4be:	80 91 00 00 	lds	r24, 0x0000
+ 4c2:	8f 5f       	subi	r24, 0xFF	; 255
+ 4c4:	80 93 00 00 	sts	0x0000, r24
+ 4c8:	20 91 00 00 	lds	r18, 0x0000
+ 4cc:	33 27       	eor	r19, r19
+ 4ce:	27 fd       	sbrc	r18, 7
+ 4d0:	30 95       	com	r19
+ 4d2:	80 91 00 00 	lds	r24, 0x0000
+ 4d6:	90 e0       	ldi	r25, 0x00	; 0
+ 4d8:	28 17       	cp	r18, r24
+ 4da:	39 07       	cpc	r19, r25
+ 4dc:	04 f0       	brlt	.+0      	; 0x4de <__vector_11+0xaa>
+ 4de:	00 c0       	rjmp	.+0      	; 0x4e0 <__vector_11+0xac>
+ 4e0:	80 91 00 00 	lds	r24, 0x0000
+ 4e4:	8c 30       	cpi	r24, 0x0C	; 12
+ 4e6:	04 f0       	brlt	.+0      	; 0x4e8 <__vector_11+0xb4>
+ 4e8:	00 c0       	rjmp	.+0      	; 0x4ea <__vector_11+0xb6>
+ 4ea:	20 91 84 00 	lds	r18, 0x0084
+ 4ee:	30 91 85 00 	lds	r19, 0x0085
+ 4f2:	80 91 00 00 	lds	r24, 0x0000
+ 4f6:	99 27       	eor	r25, r25
+ 4f8:	87 fd       	sbrc	r24, 7
+ 4fa:	90 95       	com	r25
+ 4fc:	fc 01       	movw	r30, r24
+ 4fe:	ee 0f       	add	r30, r30
+ 500:	ff 1f       	adc	r31, r31
+ 502:	e8 0f       	add	r30, r24
+ 504:	f9 1f       	adc	r31, r25
+ 506:	e0 50       	subi	r30, 0x00	; 0
+ 508:	f0 40       	sbci	r31, 0x00	; 0
+ 50a:	81 81       	ldd	r24, Z+1	; 0x01
+ 50c:	92 81       	ldd	r25, Z+2	; 0x02
+ 50e:	28 0f       	add	r18, r24
+ 510:	39 1f       	adc	r19, r25
+ 512:	30 93 89 00 	sts	0x0089, r19
+ 516:	20 93 88 00 	sts	0x0088, r18
+ 51a:	80 91 00 00 	lds	r24, 0x0000
+ 51e:	99 27       	eor	r25, r25
+ 520:	87 fd       	sbrc	r24, 7
+ 522:	90 95       	com	r25
+ 524:	fc 01       	movw	r30, r24
+ 526:	ee 0f       	add	r30, r30
+ 528:	ff 1f       	adc	r31, r31
+ 52a:	e8 0f       	add	r30, r24
+ 52c:	f9 1f       	adc	r31, r25
+ 52e:	e0 50       	subi	r30, 0x00	; 0
+ 530:	f0 40       	sbci	r31, 0x00	; 0
+ 532:	80 81       	ld	r24, Z
+ 534:	86 ff       	sbrs	r24, 6
+ 536:	00 c0       	rjmp	.+0      	; 0x538 <__vector_11+0x104>
+ 538:	80 91 00 00 	lds	r24, 0x0000
+ 53c:	99 27       	eor	r25, r25
+ 53e:	87 fd       	sbrc	r24, 7
+ 540:	90 95       	com	r25
+ 542:	fc 01       	movw	r30, r24
+ 544:	ee 0f       	add	r30, r30
+ 546:	ff 1f       	adc	r31, r31
+ 548:	e8 0f       	add	r30, r24
+ 54a:	f9 1f       	adc	r31, r25
+ 54c:	e0 50       	subi	r30, 0x00	; 0
+ 54e:	f0 40       	sbci	r31, 0x00	; 0
+ 550:	80 81       	ld	r24, Z
+ 552:	8f 73       	andi	r24, 0x3F	; 63
+ 554:	61 e0       	ldi	r22, 0x01	; 1
+ 556:	0e 94 00 00 	call	0	; 0x0 <_ZN5ServoC2Ev>
+ 55a:	00 c0       	rjmp	.+0      	; 0x55c <__vector_11+0x128>
+ 55c:	80 e4       	ldi	r24, 0x40	; 64
+ 55e:	9c e9       	ldi	r25, 0x9C	; 156
+ 560:	00 c0       	rjmp	.+0      	; 0x562 <__vector_11+0x12e>
+ 562:	80 91 84 00 	lds	r24, 0x0084
+ 566:	90 91 85 00 	lds	r25, 0x0085
+ 56a:	04 96       	adiw	r24, 0x04	; 4
+ 56c:	90 93 89 00 	sts	0x0089, r25
+ 570:	80 93 88 00 	sts	0x0088, r24
+ 574:	8f ef       	ldi	r24, 0xFF	; 255
+ 576:	80 93 00 00 	sts	0x0000, r24
+ 57a:	00 c0       	rjmp	.+0      	; 0x57c <__vector_11+0x148>
+ 57c:	80 91 84 00 	lds	r24, 0x0084
+ 580:	90 91 85 00 	lds	r25, 0x0085
+ 584:	84 54       	subi	r24, 0x44	; 68
+ 586:	9c 49       	sbci	r25, 0x9C	; 156
+ 588:	00 f0       	brcs	.+0      	; 0x58a <__vector_11+0x156>
+ 58a:	00 c0       	rjmp	.+0      	; 0x58c <__vector_11+0x158>
+ 58c:	ff 91       	pop	r31
+ 58e:	ef 91       	pop	r30
+ 590:	bf 91       	pop	r27
+ 592:	af 91       	pop	r26
+ 594:	9f 91       	pop	r25
+ 596:	8f 91       	pop	r24
+ 598:	7f 91       	pop	r23
+ 59a:	6f 91       	pop	r22
+ 59c:	5f 91       	pop	r21
+ 59e:	4f 91       	pop	r20
+ 5a0:	3f 91       	pop	r19
+ 5a2:	2f 91       	pop	r18
+ 5a4:	0f 90       	pop	r0
+ 5a6:	0f be       	out	0x3f, r0	; 63
+ 5a8:	0f 90       	pop	r0
+ 5aa:	1f 90       	pop	r1
+ 5ac:	18 95       	reti

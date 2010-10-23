@@ -1,0 +1,404 @@
+In archive libMessenger.a:
+
+Messenger.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000002e6  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  0000031a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  0000031a  2**0
+                  ALLOC
+
+Disassembly of section .text:
+
+00000000 <_ZN9MessengerC2Ev>:
+   0:	fc 01       	movw	r30, r24
+   2:	12 82       	std	Z+2, r1	; 0x02
+   4:	11 82       	std	Z+1, r1	; 0x01
+   6:	80 e2       	ldi	r24, 0x20	; 32
+   8:	87 83       	std	Z+7, r24	; 0x07
+   a:	10 86       	std	Z+8, r1	; 0x08
+   c:	e5 5b       	subi	r30, 0xB5	; 181
+   e:	ff 4f       	sbci	r31, 0xFF	; 255
+  10:	80 e4       	ldi	r24, 0x40	; 64
+  12:	81 93       	st	Z+, r24
+  14:	8f e3       	ldi	r24, 0x3F	; 63
+  16:	80 83       	st	Z, r24
+  18:	ec 54       	subi	r30, 0x4C	; 76
+  1a:	f0 40       	sbci	r31, 0x00	; 0
+  1c:	12 86       	std	Z+10, r1	; 0x0a
+  1e:	10 82       	st	Z, r1
+  20:	14 82       	std	Z+4, r1	; 0x04
+  22:	13 82       	std	Z+3, r1	; 0x03
+  24:	16 82       	std	Z+6, r1	; 0x06
+  26:	15 82       	std	Z+5, r1	; 0x05
+  28:	81 e0       	ldi	r24, 0x01	; 1
+  2a:	81 87       	std	Z+9, r24	; 0x09
+  2c:	08 95       	ret
+
+0000002e <_ZN9MessengerC1Ev>:
+  2e:	fc 01       	movw	r30, r24
+  30:	12 82       	std	Z+2, r1	; 0x02
+  32:	11 82       	std	Z+1, r1	; 0x01
+  34:	80 e2       	ldi	r24, 0x20	; 32
+  36:	87 83       	std	Z+7, r24	; 0x07
+  38:	10 86       	std	Z+8, r1	; 0x08
+  3a:	e5 5b       	subi	r30, 0xB5	; 181
+  3c:	ff 4f       	sbci	r31, 0xFF	; 255
+  3e:	80 e4       	ldi	r24, 0x40	; 64
+  40:	81 93       	st	Z+, r24
+  42:	8f e3       	ldi	r24, 0x3F	; 63
+  44:	80 83       	st	Z, r24
+  46:	ec 54       	subi	r30, 0x4C	; 76
+  48:	f0 40       	sbci	r31, 0x00	; 0
+  4a:	12 86       	std	Z+10, r1	; 0x0a
+  4c:	10 82       	st	Z, r1
+  4e:	14 82       	std	Z+4, r1	; 0x04
+  50:	13 82       	std	Z+3, r1	; 0x03
+  52:	16 82       	std	Z+6, r1	; 0x06
+  54:	15 82       	std	Z+5, r1	; 0x05
+  56:	81 e0       	ldi	r24, 0x01	; 1
+  58:	81 87       	std	Z+9, r24	; 0x09
+  5a:	08 95       	ret
+
+0000005c <_ZN9MessengerC2Ec>:
+  5c:	fc 01       	movw	r30, r24
+  5e:	6a 30       	cpi	r22, 0x0A	; 10
+  60:	01 f0       	breq	.+0      	; 0x62 <_ZN9MessengerC2Ec+0x6>
+  62:	6d 30       	cpi	r22, 0x0D	; 13
+  64:	01 f0       	breq	.+0      	; 0x66 <_ZN9MessengerC2Ec+0xa>
+  66:	66 23       	and	r22, r22
+  68:	01 f4       	brne	.+0      	; 0x6a <_ZN9MessengerC2Ec+0xe>
+  6a:	60 e2       	ldi	r22, 0x20	; 32
+  6c:	12 82       	std	Z+2, r1	; 0x02
+  6e:	11 82       	std	Z+1, r1	; 0x01
+  70:	67 83       	std	Z+7, r22	; 0x07
+  72:	10 86       	std	Z+8, r1	; 0x08
+  74:	e5 5b       	subi	r30, 0xB5	; 181
+  76:	ff 4f       	sbci	r31, 0xFF	; 255
+  78:	80 e4       	ldi	r24, 0x40	; 64
+  7a:	81 93       	st	Z+, r24
+  7c:	8f e3       	ldi	r24, 0x3F	; 63
+  7e:	80 83       	st	Z, r24
+  80:	ec 54       	subi	r30, 0x4C	; 76
+  82:	f0 40       	sbci	r31, 0x00	; 0
+  84:	12 86       	std	Z+10, r1	; 0x0a
+  86:	10 82       	st	Z, r1
+  88:	14 82       	std	Z+4, r1	; 0x04
+  8a:	13 82       	std	Z+3, r1	; 0x03
+  8c:	16 82       	std	Z+6, r1	; 0x06
+  8e:	15 82       	std	Z+5, r1	; 0x05
+  90:	81 e0       	ldi	r24, 0x01	; 1
+  92:	81 87       	std	Z+9, r24	; 0x09
+  94:	08 95       	ret
+
+00000096 <_ZN9MessengerC1Ec>:
+  96:	fc 01       	movw	r30, r24
+  98:	6a 30       	cpi	r22, 0x0A	; 10
+  9a:	01 f0       	breq	.+0      	; 0x9c <_ZN9MessengerC1Ec+0x6>
+  9c:	6d 30       	cpi	r22, 0x0D	; 13
+  9e:	01 f0       	breq	.+0      	; 0xa0 <_ZN9MessengerC1Ec+0xa>
+  a0:	66 23       	and	r22, r22
+  a2:	01 f4       	brne	.+0      	; 0xa4 <_ZN9MessengerC1Ec+0xe>
+  a4:	60 e2       	ldi	r22, 0x20	; 32
+  a6:	12 82       	std	Z+2, r1	; 0x02
+  a8:	11 82       	std	Z+1, r1	; 0x01
+  aa:	67 83       	std	Z+7, r22	; 0x07
+  ac:	10 86       	std	Z+8, r1	; 0x08
+  ae:	e5 5b       	subi	r30, 0xB5	; 181
+  b0:	ff 4f       	sbci	r31, 0xFF	; 255
+  b2:	80 e4       	ldi	r24, 0x40	; 64
+  b4:	81 93       	st	Z+, r24
+  b6:	8f e3       	ldi	r24, 0x3F	; 63
+  b8:	80 83       	st	Z, r24
+  ba:	ec 54       	subi	r30, 0x4C	; 76
+  bc:	f0 40       	sbci	r31, 0x00	; 0
+  be:	12 86       	std	Z+10, r1	; 0x0a
+  c0:	10 82       	st	Z, r1
+  c2:	14 82       	std	Z+4, r1	; 0x04
+  c4:	13 82       	std	Z+3, r1	; 0x03
+  c6:	16 82       	std	Z+6, r1	; 0x06
+  c8:	15 82       	std	Z+5, r1	; 0x05
+  ca:	81 e0       	ldi	r24, 0x01	; 1
+  cc:	81 87       	std	Z+9, r24	; 0x09
+  ce:	08 95       	ret
+
+000000d0 <_ZN9Messenger4initEc>:
+  d0:	fc 01       	movw	r30, r24
+  d2:	12 82       	std	Z+2, r1	; 0x02
+  d4:	11 82       	std	Z+1, r1	; 0x01
+  d6:	67 83       	std	Z+7, r22	; 0x07
+  d8:	10 86       	std	Z+8, r1	; 0x08
+  da:	e5 5b       	subi	r30, 0xB5	; 181
+  dc:	ff 4f       	sbci	r31, 0xFF	; 255
+  de:	80 e4       	ldi	r24, 0x40	; 64
+  e0:	81 93       	st	Z+, r24
+  e2:	8f e3       	ldi	r24, 0x3F	; 63
+  e4:	80 83       	st	Z, r24
+  e6:	ec 54       	subi	r30, 0x4C	; 76
+  e8:	f0 40       	sbci	r31, 0x00	; 0
+  ea:	12 86       	std	Z+10, r1	; 0x0a
+  ec:	10 82       	st	Z, r1
+  ee:	14 82       	std	Z+4, r1	; 0x04
+  f0:	13 82       	std	Z+3, r1	; 0x03
+  f2:	16 82       	std	Z+6, r1	; 0x06
+  f4:	15 82       	std	Z+5, r1	; 0x05
+  f6:	81 e0       	ldi	r24, 0x01	; 1
+  f8:	81 87       	std	Z+9, r24	; 0x09
+  fa:	08 95       	ret
+
+000000fc <_ZN9Messenger6attachEPFvvE>:
+  fc:	fc 01       	movw	r30, r24
+  fe:	72 83       	std	Z+2, r23	; 0x02
+ 100:	61 83       	std	Z+1, r22	; 0x01
+ 102:	08 95       	ret
+
+00000104 <_ZN9Messenger5resetEv>:
+ 104:	fc 01       	movw	r30, r24
+ 106:	12 86       	std	Z+10, r1	; 0x0a
+ 108:	10 82       	st	Z, r1
+ 10a:	14 82       	std	Z+4, r1	; 0x04
+ 10c:	13 82       	std	Z+3, r1	; 0x03
+ 10e:	16 82       	std	Z+6, r1	; 0x06
+ 110:	15 82       	std	Z+5, r1	; 0x05
+ 112:	81 e0       	ldi	r24, 0x01	; 1
+ 114:	81 87       	std	Z+9, r24	; 0x09
+ 116:	08 95       	ret
+
+00000118 <_ZN9Messenger7processEi>:
+ 118:	cf 93       	push	r28
+ 11a:	df 93       	push	r29
+ 11c:	ec 01       	movw	r28, r24
+ 11e:	18 82       	st	Y, r1
+ 120:	16 16       	cp	r1, r22
+ 122:	17 06       	cpc	r1, r23
+ 124:	04 f4       	brge	.+0      	; 0x126 <_ZN9Messenger7processEi+0xe>
+ 126:	6a 30       	cpi	r22, 0x0A	; 10
+ 128:	71 05       	cpc	r23, r1
+ 12a:	01 f0       	breq	.+0      	; 0x12c <_ZN9Messenger7processEi+0x14>
+ 12c:	6d 30       	cpi	r22, 0x0D	; 13
+ 12e:	71 05       	cpc	r23, r1
+ 130:	01 f0       	breq	.+0      	; 0x132 <_ZN9Messenger7processEi+0x1a>
+ 132:	61 15       	cp	r22, r1
+ 134:	71 05       	cpc	r23, r1
+ 136:	01 f0       	breq	.+0      	; 0x138 <_ZN9Messenger7processEi+0x20>
+ 138:	00 c0       	rjmp	.+0      	; 0x13a <_ZN9Messenger7processEi+0x22>
+ 13a:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 13c:	fe 01       	movw	r30, r28
+ 13e:	e8 0f       	add	r30, r24
+ 140:	f1 1d       	adc	r31, r1
+ 142:	13 86       	std	Z+11, r1	; 0x0b
+ 144:	1a 86       	std	Y+10, r1	; 0x0a
+ 146:	1e 82       	std	Y+6, r1	; 0x06
+ 148:	1d 82       	std	Y+5, r1	; 0x05
+ 14a:	81 e0       	ldi	r24, 0x01	; 1
+ 14c:	89 87       	std	Y+9, r24	; 0x09
+ 14e:	88 83       	st	Y, r24
+ 150:	ce 01       	movw	r24, r28
+ 152:	0b 96       	adiw	r24, 0x0b	; 11
+ 154:	9c 83       	std	Y+4, r25	; 0x04
+ 156:	8b 83       	std	Y+3, r24	; 0x03
+ 158:	00 c0       	rjmp	.+0      	; 0x15a <_ZN9Messenger7processEi+0x42>
+ 15a:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 15c:	fe 01       	movw	r30, r28
+ 15e:	e8 0f       	add	r30, r24
+ 160:	f1 1d       	adc	r31, r1
+ 162:	63 87       	std	Z+11, r22	; 0x0b
+ 164:	8f 5f       	subi	r24, 0xFF	; 255
+ 166:	8a 87       	std	Y+10, r24	; 0x0a
+ 168:	c4 5b       	subi	r28, 0xB4	; 180
+ 16a:	df 4f       	sbci	r29, 0xFF	; 255
+ 16c:	98 81       	ld	r25, Y
+ 16e:	cc 54       	subi	r28, 0x4C	; 76
+ 170:	d0 40       	sbci	r29, 0x00	; 0
+ 172:	89 17       	cp	r24, r25
+ 174:	00 f0       	brcs	.+0      	; 0x176 <_ZN9Messenger7processEi+0x5e>
+ 176:	1a 86       	std	Y+10, r1	; 0x0a
+ 178:	18 82       	st	Y, r1
+ 17a:	1c 82       	std	Y+4, r1	; 0x04
+ 17c:	1b 82       	std	Y+3, r1	; 0x03
+ 17e:	1e 82       	std	Y+6, r1	; 0x06
+ 180:	1d 82       	std	Y+5, r1	; 0x05
+ 182:	81 e0       	ldi	r24, 0x01	; 1
+ 184:	89 87       	std	Y+9, r24	; 0x09
+ 186:	88 81       	ld	r24, Y
+ 188:	81 30       	cpi	r24, 0x01	; 1
+ 18a:	01 f4       	brne	.+0      	; 0x18c <_ZN9Messenger7processEi+0x74>
+ 18c:	e9 81       	ldd	r30, Y+1	; 0x01
+ 18e:	fa 81       	ldd	r31, Y+2	; 0x02
+ 190:	30 97       	sbiw	r30, 0x00	; 0
+ 192:	01 f0       	breq	.+0      	; 0x194 <_ZN9Messenger7processEi+0x7c>
+ 194:	09 95       	icall
+ 196:	88 81       	ld	r24, Y
+ 198:	df 91       	pop	r29
+ 19a:	cf 91       	pop	r28
+ 19c:	08 95       	ret
+
+0000019e <_ZN9Messenger4nextEv>:
+ 19e:	cf 93       	push	r28
+ 1a0:	df 93       	push	r29
+ 1a2:	ec 01       	movw	r28, r24
+ 1a4:	88 81       	ld	r24, Y
+ 1a6:	88 23       	and	r24, r24
+ 1a8:	01 f0       	breq	.+0      	; 0x1aa <_ZN9Messenger4nextEv+0xc>
+ 1aa:	81 30       	cpi	r24, 0x01	; 1
+ 1ac:	01 f0       	breq	.+0      	; 0x1ae <_ZN9Messenger4nextEv+0x10>
+ 1ae:	20 e0       	ldi	r18, 0x00	; 0
+ 1b0:	30 e0       	ldi	r19, 0x00	; 0
+ 1b2:	00 c0       	rjmp	.+0      	; 0x1b4 <_ZN9Messenger4nextEv+0x16>
+ 1b4:	9e 01       	movw	r18, r28
+ 1b6:	25 5f       	subi	r18, 0xF5	; 245
+ 1b8:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1ba:	82 e0       	ldi	r24, 0x02	; 2
+ 1bc:	88 83       	st	Y, r24
+ 1be:	89 85       	ldd	r24, Y+9	; 0x09
+ 1c0:	88 23       	and	r24, r24
+ 1c2:	01 f0       	breq	.+0      	; 0x1c4 <_ZN9Messenger4nextEv+0x26>
+ 1c4:	be 01       	movw	r22, r28
+ 1c6:	69 5f       	subi	r22, 0xF9	; 249
+ 1c8:	7f 4f       	sbci	r23, 0xFF	; 255
+ 1ca:	ae 01       	movw	r20, r28
+ 1cc:	4b 5f       	subi	r20, 0xFB	; 251
+ 1ce:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1d0:	c9 01       	movw	r24, r18
+ 1d2:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 1d6:	9c 83       	std	Y+4, r25	; 0x04
+ 1d8:	8b 83       	std	Y+3, r24	; 0x03
+ 1da:	8b 81       	ldd	r24, Y+3	; 0x03
+ 1dc:	9c 81       	ldd	r25, Y+4	; 0x04
+ 1de:	89 2b       	or	r24, r25
+ 1e0:	01 f0       	breq	.+0      	; 0x1e2 <_ZN9Messenger4nextEv+0x44>
+ 1e2:	19 86       	std	Y+9, r1	; 0x09
+ 1e4:	81 e0       	ldi	r24, 0x01	; 1
+ 1e6:	00 c0       	rjmp	.+0      	; 0x1e8 <_ZN9Messenger4nextEv+0x4a>
+ 1e8:	80 e0       	ldi	r24, 0x00	; 0
+ 1ea:	df 91       	pop	r29
+ 1ec:	cf 91       	pop	r28
+ 1ee:	08 95       	ret
+
+000001f0 <_ZN9Messenger9availableEv>:
+ 1f0:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 1f4:	08 95       	ret
+
+000001f6 <_ZN9Messenger8readCharEv>:
+ 1f6:	cf 93       	push	r28
+ 1f8:	df 93       	push	r29
+ 1fa:	ec 01       	movw	r28, r24
+ 1fc:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 200:	88 23       	and	r24, r24
+ 202:	01 f0       	breq	.+0      	; 0x204 <_ZN9Messenger8readCharEv+0xe>
+ 204:	81 e0       	ldi	r24, 0x01	; 1
+ 206:	89 87       	std	Y+9, r24	; 0x09
+ 208:	eb 81       	ldd	r30, Y+3	; 0x03
+ 20a:	fc 81       	ldd	r31, Y+4	; 0x04
+ 20c:	80 81       	ld	r24, Z
+ 20e:	df 91       	pop	r29
+ 210:	cf 91       	pop	r28
+ 212:	08 95       	ret
+
+00000214 <_ZN9Messenger11checkStringEPc>:
+ 214:	0f 93       	push	r16
+ 216:	1f 93       	push	r17
+ 218:	cf 93       	push	r28
+ 21a:	df 93       	push	r29
+ 21c:	ec 01       	movw	r28, r24
+ 21e:	8b 01       	movw	r16, r22
+ 220:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 224:	88 23       	and	r24, r24
+ 226:	01 f0       	breq	.+0      	; 0x228 <_ZN9Messenger11checkStringEPc+0x14>
+ 228:	6b 81       	ldd	r22, Y+3	; 0x03
+ 22a:	7c 81       	ldd	r23, Y+4	; 0x04
+ 22c:	c8 01       	movw	r24, r16
+ 22e:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 232:	00 97       	sbiw	r24, 0x00	; 0
+ 234:	01 f4       	brne	.+0      	; 0x236 <_ZN9Messenger11checkStringEPc+0x22>
+ 236:	81 e0       	ldi	r24, 0x01	; 1
+ 238:	89 87       	std	Y+9, r24	; 0x09
+ 23a:	00 c0       	rjmp	.+0      	; 0x23c <_ZN9Messenger11checkStringEPc+0x28>
+ 23c:	00 c0       	rjmp	.+0      	; 0x23e <_ZN9Messenger11checkStringEPc+0x2a>
+ 23e:	80 e0       	ldi	r24, 0x00	; 0
+ 240:	df 91       	pop	r29
+ 242:	cf 91       	pop	r28
+ 244:	1f 91       	pop	r17
+ 246:	0f 91       	pop	r16
+ 248:	08 95       	ret
+
+0000024a <_ZN9Messenger10copyStringEPch>:
+ 24a:	ff 92       	push	r15
+ 24c:	0f 93       	push	r16
+ 24e:	1f 93       	push	r17
+ 250:	cf 93       	push	r28
+ 252:	df 93       	push	r29
+ 254:	ec 01       	movw	r28, r24
+ 256:	8b 01       	movw	r16, r22
+ 258:	f4 2e       	mov	r15, r20
+ 25a:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 25e:	88 23       	and	r24, r24
+ 260:	01 f0       	breq	.+0      	; 0x262 <_ZN9Messenger10copyStringEPch+0x18>
+ 262:	81 e0       	ldi	r24, 0x01	; 1
+ 264:	89 87       	std	Y+9, r24	; 0x09
+ 266:	6b 81       	ldd	r22, Y+3	; 0x03
+ 268:	7c 81       	ldd	r23, Y+4	; 0x04
+ 26a:	c8 01       	movw	r24, r16
+ 26c:	4f 2d       	mov	r20, r15
+ 26e:	50 e0       	ldi	r21, 0x00	; 0
+ 270:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 274:	00 c0       	rjmp	.+0      	; 0x276 <_ZN9Messenger10copyStringEPch+0x2c>
+ 276:	ff 20       	and	r15, r15
+ 278:	01 f0       	breq	.+0      	; 0x27a <_ZN9Messenger10copyStringEPch+0x30>
+ 27a:	f8 01       	movw	r30, r16
+ 27c:	10 82       	st	Z, r1
+ 27e:	df 91       	pop	r29
+ 280:	cf 91       	pop	r28
+ 282:	1f 91       	pop	r17
+ 284:	0f 91       	pop	r16
+ 286:	ff 90       	pop	r15
+ 288:	08 95       	ret
+
+0000028a <_ZN9Messenger8readLongEv>:
+ 28a:	cf 93       	push	r28
+ 28c:	df 93       	push	r29
+ 28e:	ec 01       	movw	r28, r24
+ 290:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 294:	88 23       	and	r24, r24
+ 296:	01 f4       	brne	.+0      	; 0x298 <_ZN9Messenger8readLongEv+0xe>
+ 298:	20 e0       	ldi	r18, 0x00	; 0
+ 29a:	30 e0       	ldi	r19, 0x00	; 0
+ 29c:	40 e0       	ldi	r20, 0x00	; 0
+ 29e:	50 e0       	ldi	r21, 0x00	; 0
+ 2a0:	00 c0       	rjmp	.+0      	; 0x2a2 <_ZN9Messenger8readLongEv+0x18>
+ 2a2:	81 e0       	ldi	r24, 0x01	; 1
+ 2a4:	89 87       	std	Y+9, r24	; 0x09
+ 2a6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 2a8:	9c 81       	ldd	r25, Y+4	; 0x04
+ 2aa:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 2ae:	9b 01       	movw	r18, r22
+ 2b0:	ac 01       	movw	r20, r24
+ 2b2:	b9 01       	movw	r22, r18
+ 2b4:	ca 01       	movw	r24, r20
+ 2b6:	df 91       	pop	r29
+ 2b8:	cf 91       	pop	r28
+ 2ba:	08 95       	ret
+
+000002bc <_ZN9Messenger7readIntEv>:
+ 2bc:	cf 93       	push	r28
+ 2be:	df 93       	push	r29
+ 2c0:	ec 01       	movw	r28, r24
+ 2c2:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 2c6:	88 23       	and	r24, r24
+ 2c8:	01 f4       	brne	.+0      	; 0x2ca <_ZN9Messenger7readIntEv+0xe>
+ 2ca:	20 e0       	ldi	r18, 0x00	; 0
+ 2cc:	30 e0       	ldi	r19, 0x00	; 0
+ 2ce:	00 c0       	rjmp	.+0      	; 0x2d0 <_ZN9Messenger7readIntEv+0x14>
+ 2d0:	81 e0       	ldi	r24, 0x01	; 1
+ 2d2:	89 87       	std	Y+9, r24	; 0x09
+ 2d4:	8b 81       	ldd	r24, Y+3	; 0x03
+ 2d6:	9c 81       	ldd	r25, Y+4	; 0x04
+ 2d8:	0e 94 00 00 	call	0	; 0x0 <_ZN9MessengerC2Ev>
+ 2dc:	9c 01       	movw	r18, r24
+ 2de:	c9 01       	movw	r24, r18
+ 2e0:	df 91       	pop	r29
+ 2e2:	cf 91       	pop	r28
+ 2e4:	08 95       	ret
