@@ -3,6 +3,10 @@
 	<name>magellanmachine-arduino</name>
 	<comment></comment>
 	<projects>
+		<project>ArduinoCore</project>
+		<project>Messenger</project>
+		<project>Servo</project>
+		<project>Wire</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
