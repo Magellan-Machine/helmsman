@@ -1,5 +1,8 @@
 /*
- * main.cpp
+ * arduinoMain.cpp
+ *
+ * Contains the loop() and setup() functions, as in normal use of the 
+ * Arduino IDE
  *
  *  Created on: Oct 17, 2010
  *      Author: erl
@@ -81,23 +84,3 @@ void loop() {
   // Serial.println( "After pilot");
 }
 
-extern "C" {
-int main( void );
-}
-
-int main(void) {
-
-  /* Must call init for arduino to work properly */
-  init();
-  setup();
-
-  for (;;) {
-	  loop();
-  } // end for
-} // end main
-
-extern "C" void __cxa_pure_virtual()
-{
-  cli();
-  for (;;);
-}
