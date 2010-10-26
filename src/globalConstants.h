@@ -27,10 +27,10 @@ const int MIN_SERVO_SAIL          =   30;
 const int MAX_SERVO_SAIL          =  130;
 
 // Pin assigment 
-const int PIN_SERVO_RUDDER        =  3;  // Analog write is possible only on pins: 3, 5, 6, 9, 10, and 11
-const int PIN_SERVO_SAIL          =  5;  // Analog write is possible only on pins: 3, 5, 6, 9, 10, and 11
-const int PIN_REMOTE_RUDDER       =  6;
-const int PIN_REMOTE_SAIL         =  7;
+const int PIN_SERVO_RUDDER        =  5;  // Analog write is possible only on pins: 3, 5, 6, 9, 10, and 11
+const int PIN_SERVO_SAIL          =  6;  // Analog write is possible only on pins: 3, 5, 6, 9, 10, and 11
+const int PIN_REMOTE_RUDDER       =  3;
+const int PIN_REMOTE_SAIL         =  4;
 const int PIN_M3D_RESET           = 8;  // magnetometer pin 6
 const int PIN_M3D_DRDY            = 9;  // magnetometer pin 5
 const int PIN_M3D_SSNOT           = 10;  // magnetometer pin 4
@@ -43,5 +43,10 @@ const int PIN_M3D_SCLK            = 13;  // magnetometer pin 1
  *       SDA to Analog pin 4 and SCL to analog pin 5
  *       The Wire i2c library uses these by default.
  */
- 
+/*
+ * Analog pins
+ */
+const int PIN_SERVO_CURRENT = 0;
+const int PIN_SERVO_VOLTAGE = 1;
+
 #endif
